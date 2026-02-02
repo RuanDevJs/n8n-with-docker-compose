@@ -1,0 +1,17 @@
+services:
+  n8n-rocketseat:
+    image: n8nio/n8n
+    ports:
+      - "1978:5678"
+    volumes:
+      - n8n-rocketseat:/var/lib/n8n-rocketseat
+    environment:
+      GENERIC_TIMEZONE: America/Sao_Paulo
+    restart: unless-stopped
+    networks:
+      - n8n-rocketseat
+volumes:
+  n8n-rocketseat:
+networks:
+  n8n-rocketseat:
+    driver: bridge
